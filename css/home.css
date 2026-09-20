@@ -120,6 +120,7 @@ p {
 .social-links img {
     width: 55%;
     height: 55%;
+    user-select: none;
 }
 h1, h2, p {
     text-shadow: 0 0 8px black;
