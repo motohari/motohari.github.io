@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Spamen</title>
+    <link rel="stylesheet" href="css/basic.css">
+
+    <link rel="stylesheet" href="/transition/transition.css">
+    <script src="/transition/transition.js" defer></script>
+</head>
+<body>
+    <div class="titlebar">
+        <div class="bar_title">Spamen v1.0.1</div>
+        <button class="oth-btn" onclick="siteTransition.leave('pages/notice.html')">お知らせ</button>
+        <button class="close-btn" onclick="reset()">リセット</button>
+        <button class="oth-btn-theme" onclick="m_open()">テーマ</button>
+        <button class="close-btn" onclick="siteTransition.leave('/')">✕</button>
+    </div>
+    <div id="new-notice" class="new-notice" hidden>新しいお知らせがあります</div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal" id="modal-window">
+            <div class="titlebar">
+                <div class="bar_title">テーマ設定</div>
+                <button class="close-btn" onclick="m_close()">✕</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-left">
+                <div class="modal_p">テーマ選択 : </div>
+                <button class="modal-button" onclick="setTheme('desktop_light')">(明) Desktop Light</button><br>
+                <button class="modal-button" onclick="setTheme('desktop_dark')">(暗) Desktop Dark</button><br>
+                <button class="modal-button" onclick="yabai_theme_keikoku()">(明+) カオス</button>
+                </div>
+                <div>　</div>
+                <div class="modal-right">
+                    <div class="modal_p">カスタム背景画像 : </div>
+                    <input type="file" id="imageInput" accept="image/*" />
+                    <br/>
+                    <div class="modal_p">画像プレビュー : </div>
+                    <img id="preview" alt="アップロードした画像" style="max-width: 300px; display:none;" />
+                    <button class="modal-button" onclick="clearBackgroundImage()">保存された画像を削除</button>
+                    <div class="modal_p" style="font-size: 15px; color: red;">注意 : 画面アスペクト比に合わせないと、下に隙間ができます。</div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mannnaka">
+        <h1>Spamen</h1>
+        <input id="fdsa" type="text">
+        <div class="frido">
+            <progress id="fdsa_range" value="" max="4"></progress>
+        </div>
+        <div class="hidari">
+            <p id="count">カウント FDSA : 0</p>
+            <p id="count_f">カウント F : 0</p>
+            <p id="count_d">カウント D : 0</p>
+            <p id="count_s">カウント S : 0</p>
+            <p id="count_a">カウント A : 0</p>
+            <p id="fdsa_count_miss">ミスカウント : 0</p>
+            <p id="fdsa_ps">fdsa per second : 0</p>
+        </div>
+    </div>
+
+    <script src="js/cstm_background.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/notice.js"></script>
+</body>
+</html>

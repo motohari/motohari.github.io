@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>もとはりのお部屋</title>
+
+    <script src="/js/mainpage.js" defer></script>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/hamburger.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/transition/transition.css">
+    <script src="/transition/transition.js" defer></script>
+</head>
+<body>
+    <div id="route-error" class="route-error" role="alert" hidden>
+        404 Not found<br>
+        ページが見つからなかったため、メインページに飛びました
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav class="menu">
+        <ul>
+            <li><a onclick="siteTransition.leave('/')">メインページ</a></li>
+            <li><a onclick="siteTransition.leave('/pages/apps/Spamen')">Spamen(アプリ)</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>もとはりのお部屋</h1>
+        <h2>自己紹介</h2>
+        <p>
+            もとはり(motohari)と申します。<br>
+            映像制作、プログラミング、音楽制作などが趣味の中学生です。<br>
+            映　　像：BMD DaVinci Resolve, BMD Fusion Studio, Blender, AviUtl(初代/2)<br>
+            扱う言語：HTML/CSS/JS, Python<br>
+            音楽制作：FL Studio
+        </p>
+        <div class="social-links" aria-label="SNSリンク">
+            <a href="https://x.com/motohari470" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+                <img src="https://cdn.simpleicons.org/x/ffffff" alt="">
+            </a>
+            <a href="https://discord.com/users/1357670476360581131" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+                <img src="https://cdn.simpleicons.org/discord/ffffff" alt="">
+            </a>
+            <a href="https://www.youtube.com/@motohari470" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+                <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="">
+            </a>
+            <a href="https://github.com/motohari" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                <img src="https://cdn.simpleicons.org/github/ffffff" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

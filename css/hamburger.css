@@ -1,0 +1,78 @@
+#menu-toggle {
+    display: none;
+}
+.hamburger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.hamburger span {
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    transition: 0.5s;
+}
+.hamburger span:nth-child(1) {
+    transform: translateY(-8px);
+}
+.hamburger span:nth-child(2) {
+    transform: translateY(0);
+}
+.hamburger span:nth-child(3) {
+    transform: translateY(8px);
+}
+#menu-toggle:checked + .hamburger span {
+    background-color: rgb(255, 80, 80);
+}
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg);
+}
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+.menu {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    background-color: #000000;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    z-index: 999;
+}
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    border-bottom: 1px solid #444;
+}
+.menu a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.4s ease;
+    user-select: none;
+}
+.menu a:hover {
+    background-color: white;
+    color: black;
+}
+#menu-toggle:checked + .hamburger + .menu {
+    max-height: 300px;
+}

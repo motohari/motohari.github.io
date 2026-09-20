@@ -1,0 +1,137 @@
+@keyframes ahaha1 {
+    0% {
+        background: linear-gradient(10deg, red, orange, yellow, green, blue, indigo, violet);
+    }
+    100% {
+        background: linear-gradient(48deg, red, orange, yellow, green, blue, indigo, violet);
+    }
+}
+
+@keyframes ahaha2 {
+    0% {
+        transform: rotateZ(20deg) rotateY(50deg);
+    }
+    50% {
+        transform: rotateZ(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateZ(20deg) rotateY(50deg);
+    }
+}
+
+@keyframes ahaha3 {
+    0% {
+        transform: rotateY(180deg);
+    }
+    50% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes ahaha4 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    animation: ahaha1 1s linear infinite;
+}
+
+p{
+    font-size: 15px;
+    font-weight: bold;
+    font-weight: bold;
+    background: linear-gradient(156deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    transition: 1s;
+}
+
+.mannnaka{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hidari{
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    background: linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.hidari:hover{
+    p{
+        transform: rotateZ(-45deg);
+        font-size: 35px;
+    }
+}
+
+#fdsa{
+    width: 100%;
+    padding: 5px 0px;
+    font-size: 25px;
+    border: none;
+    box-sizing: border-box;
+    text-align: center;
+    background: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
+    color: white;
+    outline: 5px solid #020079;
+    transition: background 0.1s ease, outline 3s ease;
+    animation: ahaha3 5s ease infinite;
+}
+
+#fdsa:focus{
+    outline: 98px solid red;
+    transition: background 0.1s ease, outline 1s ease;
+}
+
+#fdsa:hover{
+    outline: 50px solid #ffdd00;
+    transition: background 0.1s ease, outline 0.1s ease;
+}
+
+#fdsa_range{
+    width: 99%;
+    height: 30px;
+}
+
+.frido{
+    padding-top: 15px;
+}
+
+h1{
+    font-size: 100px;
+    transform: rotateZ(20deg) rotateY(50deg);
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    color: rgb(255, 0, 251);
+    animation: ahaha2 10s infinite;
+    transition: 1s ease;
+}
+
+h1:hover{
+    animation: ahaha4 .1s linear infinite;
+}
+
+progress{
+    animation: ahaha4 5s ease-in-out infinite;
+}

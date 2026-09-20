@@ -1,0 +1,54 @@
+.main{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+.notice {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(223, 223, 223);
+    margin: 20px;
+    border: 0px solid rgb(255, 255, 255);
+    transition: border 0.2s ease;
+}
+
+.notice:hover {
+    border: 10px solid #24ffb6;
+    .title {
+        color: rgb(8, 8, 8);
+        transition: color 0.2s ease;
+    }
+    .date {
+        color: rgb(19, 19, 19);
+        transition: color 0.2s ease;
+    }
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color: rgb(73, 73, 73);
+    transition: color 0.2s ease;
+}
+
+.date {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(73, 73, 73);
+    transition: color 0.2s ease;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.doc {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    font-weight: bold;
+    color: rgb(73, 73, 73);
+}
