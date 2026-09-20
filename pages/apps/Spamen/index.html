@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="titlebar">
-        <div class="bar_title">Spamen v1.0.1</div>
+        <div class="bar_title">Spamen v1.0.2</div>
         <button class="oth-btn" onclick="siteTransition.leave('pages/notice.html')">お知らせ</button>
         <button class="close-btn" onclick="reset()">リセット</button>
         <button class="oth-btn-theme" onclick="m_open()">テーマ</button>
@@ -39,8 +39,23 @@
                     <div class="modal_p">画像プレビュー : </div>
                     <img id="preview" alt="アップロードした画像" style="max-width: 300px; display:none;" />
                     <button class="modal-button" onclick="clearBackgroundImage()">保存された画像を削除</button>
-                    <div class="modal_p" style="font-size: 15px; color: red;">注意 : 画面アスペクト比に合わせないと、下に隙間ができます。</div>
                     <br/>
+                </div>
+                <div class="modal-right">
+                    <div class="modal_p">シャドウの設定 : </div>
+                    <label>
+                        <input type="checkbox" id="shadowEnabled" onchange="updateShadowSettings()">
+                        シャドウをつける
+                    </label>
+                    <br>
+                    <label for="shadowBlur">ぼかし : </label>
+                    <input type="range" id="shadowBlur" min="0" max="30" value="6"
+                           oninput="updateShadowSettings()">
+                    <span id="shadowBlurValue">6px</span>
+                    <br>
+                    <label for="shadowColor">色 : </label>
+                    <input type="color" id="shadowColor" value="#000000"
+                           onchange="updateShadowSettings()">
                 </div>
             </div>
         </div>
@@ -68,5 +83,51 @@
     <script src="js/index.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/notice.js"></script>
+    <script>
+        (function () {
+            const textShadowElements = [
+                document.querySelector('.mannnaka h1')
+            ];
+            const boxShadowElements = [
+                document.getElementById('fdsa'),
+                document.querySelector('.hidari')
+            ];
+            const filterShadowElements = [
+                document.getElementById('fdsa_range')
+            ];
+
+            window.updateShadowSettings = function () {
+                const enabled = document.getElementById('shadowEnabled').checked;
+                const blur = document.getElementById('shadowBlur').value;
+                const color = document.getElementById('shadowColor').value;
+                const shadow = enabled ? `0 0 ${blur}px ${color}` : 'none';
+
+                textShadowElements.forEach(function (element) {
+                    if (!element) return;
+                    element.style.textShadow = shadow;
+                });
+                boxShadowElements.forEach(function (element) {
+                    if (!element) return;
+                    element.style.boxShadow = shadow;
+                });
+                filterShadowElements.forEach(function (element) {
+                    if (!element) return;
+                    element.style.filter = enabled
+                        ? `drop-shadow(0 0 ${blur}px ${color})`
+                        : 'none';
+                });
+                document.getElementById('shadowBlurValue').textContent = `${blur}px`;
+                localStorage.setItem('spamenShadowSettings', JSON.stringify({ enabled, blur, color }));
+            };
+
+            const saved = JSON.parse(localStorage.getItem('spamenShadowSettings') || 'null');
+            if (saved) {
+                document.getElementById('shadowEnabled').checked = saved.enabled;
+                document.getElementById('shadowBlur').value = saved.blur;
+                document.getElementById('shadowColor').value = saved.color;
+            }
+            window.updateShadowSettings();
+        }());
+    </script>
 </body>
 </html>
