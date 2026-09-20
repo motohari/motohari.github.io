@@ -1,3 +1,7 @@
+const userLang = navigator.language || navigator.userLanguage;
+
+const message = document.getElementById("message");
+
 const backgroundImages = [
 	"/images/background/BG1.webp",
 	"/images/background/BG2.webp"
@@ -5,12 +9,17 @@ const backgroundImages = [
 
 const slideInterval = 5000;
 
+if (!userLang.startsWith("ja")) {
+	message.hidden = false;
+	message.innerHTML = "Sorry, this page is only available in Japanese."
+}
+
 function showRouteError() {
 	const query = new URLSearchParams(window.location.search);
-	const error = document.getElementById("route-error");
 
-	if (query.get("error") === "404" && error) {
-		error.hidden = false;
+	if (query.get("error") === "404" && message) {
+		message.innerHTML = "404 Not Found<br>ページが見つからないため、メインページに飛びました";
+		message.hidden = false;
 	}
 }
 

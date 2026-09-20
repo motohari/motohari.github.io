@@ -2,7 +2,7 @@ body {
     background-size: cover;
     overflow: hidden;
 }
-.route-error {
+.message {
     position: fixed;
     z-index: 4;
     top: 1rem;
