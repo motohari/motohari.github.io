@@ -1,5 +1,3 @@
-const userLang = navigator.language || navigator.userLanguage;
-
 const message = document.getElementById("message");
 
 const backgroundImages = [
@@ -8,11 +6,6 @@ const backgroundImages = [
 ];
 
 const slideInterval = 5000;
-
-if (!userLang.startsWith("ja")) {
-	message.hidden = false;
-	message.innerHTML = "Sorry, this page is only available in Japanese."
-}
 
 function showRouteError() {
 	const query = new URLSearchParams(window.location.search);
