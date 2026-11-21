@@ -1,0 +1,54 @@
+---
+import { getTranslations } from '../i18n/utils.js';
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+
+const currentPath = Astro.url.pathname.replace(/^\/(ja|en)/, '') || '/';
+const currentLangLabel = lang === 'ja' ? '日本語' : 'English';
+---
+
+<div id="message" class="message" role="alert" data-404={t.errors.notFound} hidden>
+  メッセージ
+</div>
+
+<!-- 【左上】言語切り替えメニュー -->
+<input type="checkbox" id="lang-toggle">
+<label for="lang-toggle" class="lang-button" aria-label="言語切り替え / Language" title="Language">
+  {currentLangLabel}
+</label>
+
+<nav class="lang-menu">
+  <ul>
+    <li>
+      <a 
+        class={lang === 'ja' ? 'is-current' : ''} 
+        onclick={`localStorage.setItem('preferredLang', 'ja'); siteTransition.leave('/ja${currentPath}');`}
+      >
+        日本語 {lang === 'ja' && '✓'}
+      </a>
+    </li>
+    <li>
+      <a 
+        class={lang === 'en' ? 'is-current' : ''} 
+        onclick={`localStorage.setItem('preferredLang', 'en'); siteTransition.leave('/en${currentPath}');`}
+      >
+        English {lang === 'en' && '✓'}
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- 【右上】既存のハンバーガーメニュー -->
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<nav class="menu">
+  <ul>
+    <li><a onclick={`siteTransition.leave('/${lang}/')`}>{t.nav.home}</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,16 @@
+{
+  "siteTitle": "Motohari's Room",
+  "nav": {
+    "home": "Main Page"
+  },
+  "home": {
+    "title": "Motohari's Room",
+    "description": "The homepage of the Motohari website.",
+    "heading": "Motohari's Room",
+    "aboutHeading": "About me",
+    "intro": "Hi, I'm Motohari.<br>Video: BMD DaVinci Resolve, BMD Fusion Studio, Blender, AviUtl (Original/2) <br> Programming Languages (I'm Learning): HTML/CSS/JS, Python, C++, C# (Unity) <br> Music Production: FL Studio, Cubase"
+  },
+  "errors": {
+    "notFound": "404 Not Found<br>The page could not be found, so you have been redirected to the main page."
+  }
+}

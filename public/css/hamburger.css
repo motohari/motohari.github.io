@@ -76,3 +76,79 @@
 #menu-toggle:checked + .hamburger + .menu {
     max-height: 300px;
 }
+
+/* --- 左上：言語切り替えメニュー --- */
+#lang-toggle {
+    display: none;
+}
+
+.lang-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: "Hina Mincho", serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1000;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ホバー時はメニュー項目と同じく白黒反転 */
+.lang-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.lang-menu {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 160px;
+    background-color: #000000;
+    font-family: "Hina Mincho", serif;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    z-index: 999;
+}
+
+.lang-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lang-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.lang-menu a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.4s ease;
+    user-select: none;
+    cursor: pointer;
+}
+
+.lang-menu a:hover {
+    background-color: white;
+    color: black;
+}
+
+.lang-menu a.is-current {
+    font-weight: bold;
+}
+
+#lang-toggle:checked + .lang-button + .lang-menu {
+    max-height: 200px;
+}

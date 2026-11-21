@@ -11,7 +11,7 @@ function showRouteError() {
 	const query = new URLSearchParams(window.location.search);
 
 	if (query.get("error") === "404" && message) {
-		message.innerHTML = "404 Not Found<br>ページが見つからないため、メインページに飛びました";
+		message.innerHTML = message.dataset["404"] || "404 Not Found";
 		message.hidden = false;
 	}
 }

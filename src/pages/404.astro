@@ -1,0 +1,27 @@
+---
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>404 Redirecting... | もとはりのお部屋</title>
+  <meta http-equiv="refresh" content="0;url=/ja/?error=404" />
+  <script is:inline>
+    const path = window.location.pathname;
+    const savedLang = localStorage.getItem('preferredLang');
+
+    if (path.startsWith('/en')) {
+      window.location.replace('/en/?error=404');
+    } else if (path.startsWith('/ja')) {
+      window.location.replace('/ja/?error=404');
+    } else if (savedLang === 'en') {
+      window.location.replace('/en/?error=404');
+    } else {
+      window.location.replace('/ja/?error=404');
+    }
+  </script>
+</head>
+<body>
+  <p>Page not found. Redirecting...</p>
+</body>
+</html>

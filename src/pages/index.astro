@@ -1,0 +1,27 @@
+---
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>もとはりのお部屋</title>
+
+  <meta http-equiv="refresh" content="0;url=/ja/" />
+  <link rel="canonical" href="https://github.io" />
+
+  <script is:inline>
+    // 前回選択して保存された言語を取得
+    const savedLang = localStorage.getItem('preferredLang');
+
+    if (savedLang === 'en') {
+      window.location.replace('/en/');
+    } else {
+      window.location.replace('/ja/');
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting... <a href="/ja/">日本語</a> / <a href="/en/">English</a></p>
+</body>
+</html>

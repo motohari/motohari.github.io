@@ -1,0 +1,16 @@
+{
+  "siteTitle": "もとはりのお部屋",
+  "nav": {
+    "home": "メインページ"
+  },
+  "home": {
+    "title": "もとはりのお部屋",
+    "description": "もとはり (motohari)のサイトのトップページ。",
+    "heading": "もとはりのお部屋",
+    "aboutHeading": "自己紹介",
+    "intro": "もとはり(motohari)と申します。<br>映像制作、プログラミング、音楽制作などが趣味の中学生です。<br>映　　像：BMD DaVinci Resolve, BMD Fusion Studio, Blender, AviUtl(初代/2)<br>主に扱う言語(勉強中)：HTML/CSS/JS, Python, C++, C#(Unity)<br>音楽制作：FL Studio, Cubase"
+  },
+  "errors": {
+    "notFound": "404 Not Found<br>ページが見つからないため、メインページに飛びました"
+  }
+}

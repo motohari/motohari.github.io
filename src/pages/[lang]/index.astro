@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslations, languages } from '../../i18n/utils.js';
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+---
+
+<BaseLayout
+  title={t.siteTitle}
+  description={t.home.description}
+  lang={lang}
+  pageCss="/css/home.css"
+  pageJs="/js/mainpage.js"
+>
+  <h1>{t.home.heading}</h1>
+  <h2>{t.nav.about}</h2>
+  <p set:html={t.home.intro}></p>
+
+  <div class="social-links" aria-label="SNSリンク">
+    <a href="https://x.com/motohari470" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+      <img src="https://cdn.simpleicons.org/x/ffffff" alt="X">
+    </a>
+    <a href="https://discord.com/users/1357670476360581131" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+      <img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord">
+    </a>
+    <a href="https://www.youtube.com/@motohari470" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+      <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube">
+    </a>
+    <a href="https://github.com/motohari" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+      <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub">
+    </a>
+  </div>
+</BaseLayout>
