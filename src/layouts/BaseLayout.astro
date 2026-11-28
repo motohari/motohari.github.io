@@ -1,15 +1,14 @@
 ---
 import Menu from '../components/Menu.astro';
 
-// 各ページから受け取る情報（指定しなかった場合のデフォルト値も設定）
 const { 
   title, 
-  description = 'もとはり (motohari)のサイト', 
+  description = '', 
   lang, 
   pageCss = '', 
   pageJs = '',
-  ogType = 'website',                  // デフォルトは website（記事ページでは 'article' を渡す）
-  ogImage = '/images/default-ogp.png'  // デフォルトのOGP画像パス（必要に応じて変更してください）
+  ogType = 'website',
+  ogImage
 } = Astro.props;
 
 // 現在のページのフルURL・日英ペアURL・OGP画像のフルURLを自動生成
@@ -28,7 +27,7 @@ const ogImageUrl = new URL(ogImage, Astro.site);
   <title>{title}</title>
   <meta name="description" content={description} />
 
-  <!-- OGP（SNSシェア時のカード表示：ページごとに自動で切り替わる！） -->
+  <!-- OGP（SNSシェア時のカード表示：ページごとに自動で切り替わる） -->
   <meta property="og:title" content={title} />
   <meta property="og:type" content={ogType} />
   <meta property="og:url" content={canonicalUrl} />
@@ -44,13 +43,13 @@ const ogImageUrl = new URL(ogImage, Astro.site);
   <link rel="alternate" hreflang="en" href={enUrl} />
   <link rel="alternate" hreflang="x-default" href={jaUrl} />
 
-  <!-- 全ページ共通のCSS & JS -->
+  <!-- 全ページ共通 -->
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/hamburger.css">
   <link rel="stylesheet" href="/transition/transition.css">
   <script src="/transition/transition.js" defer></script>
 
-  <!-- ページ専用のCSS & JS -->
+  <!-- ページ専用 -->
   {pageCss && <link rel="stylesheet" href={pageCss} />}
   {pageJs && <script src={pageJs} defer></script>}
 
