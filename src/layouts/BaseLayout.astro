@@ -27,7 +27,7 @@ const ogImageUrl = new URL(ogImage, Astro.site);
   <title>{title}</title>
   <meta name="description" content={description} />
 
-  <!-- OGP（SNSシェア時のカード表示：ページごとに自動で切り替わる） -->
+  <!-- OGP -->
   <meta property="og:title" content={title} />
   <meta property="og:type" content={ogType} />
   <meta property="og:url" content={canonicalUrl} />
@@ -56,11 +56,13 @@ const ogImageUrl = new URL(ogImage, Astro.site);
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap"
+  rel="stylesheet"
+  >
 </head>
 <body>
   <Menu lang={lang} />
-
   <div class="content">
     <slot />
   </div>
